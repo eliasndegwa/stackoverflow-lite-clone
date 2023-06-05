@@ -14,7 +14,7 @@ Stack Overflow lite is a WebApp I designed and developed as part of THE Jitu Coh
 * Users can post questions.
 * Users can delete the questions they post.  
 * Users can post answers.  
-* * Users can view the answers to questions.  
+* Users can view the answers to questions.  
 * User can update a question 
 * Users can accept an answer out of all the answers to his/her question as the preferred answer.   
 * Users can upvote or downvote an answer.  
@@ -31,7 +31,7 @@ Stack Overflow lite is a WebApp I designed and developed as part of THE Jitu Coh
 * Send a welcome email 
 * Send an email to a user whose answer was marked as preferred.
 
-#Angular
+# Angular
 * Use NgRX for state management 
 * Use Both template driven forms and Reactive forms  
 * Use at least 4 custom pipes 
@@ -44,7 +44,7 @@ Stack Overflow lite is a WebApp I designed and developed as part of THE Jitu Coh
 * Responsive User Interface 
 * Write tests 
 
-#Node JS 
+# Node JS 
 * Protect all the Routes except Authentication Routes 
 * Add Validation 
 * Use database Helpers  
