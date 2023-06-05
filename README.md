@@ -26,8 +26,9 @@ Stack Overflow lite is a WebApp I designed and developed as part of THE Jitu Coh
 * User can update his/her profile  
 
 # Admin
-* On the admin side be able to delete Questions and Users 
-* Background Services 
+* On the admin side be able to delete Questions and Users
+
+# Background Services 
 * Send a welcome email 
 * Send an email to a user whose answer was marked as preferred.
 
