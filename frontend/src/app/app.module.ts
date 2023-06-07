@@ -7,6 +7,7 @@ import { FormatDatePipe } from './pipes/format-date.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
 import { SortPipe } from './pipes/sort.pipe';
 import { TruncatePipe } from './pipes/truncate.pipe';
+import { HeaderComponent } from "./components/header/header.component";
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { TruncatePipe } from './pipes/truncate.pipe';
     bootstrap: [AppComponent],
     imports: [
         BrowserModule,
-        AppRoutingModule
+        AppRoutingModule,
+        HeaderComponent
     ]
 })
 export class AppModule { }

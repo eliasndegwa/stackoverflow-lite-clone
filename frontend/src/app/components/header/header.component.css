@@ -1,0 +1,76 @@
+header{
+display: flex;
+align-items: flex-end;
+justify-content: space-between;
+border-top: 3px solid #F48024;
+border-bottom: 1px solid #aab6c2;
+background-color: #fff;
+padding: .5rem 1rem;
+}
+
+ul,li,a,img,.search,input,.profile{
+    background-color: #fff;
+}
+
+.logo{
+    position: relative;
+    margin-left: -4rem;
+}
+
+ul{
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2rem;
+    
+}
+ul li{
+    list-style-type: none;
+    font-size: 1.1rem;
+
+}
+.search input{
+    border: 1px solid #838C95;
+    border-radius: .3rem;
+    width: 600px;
+    height: 32.59px;
+    padding: 1rem;
+    font-size: 1.1rem;
+    outline: none;
+}
+
+.profile{
+    position: relative;
+    margin-right: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: .5rem;
+}
+
+button{
+    width: 4.4rem;
+    height: 2rem;
+    border-radius: 3px;
+    border: 1px solid #7aa7c7;
+    text-transform: capitalize;
+}
+
+.login{
+    background-color: #E1ECF4;
+    color: #39739d;
+}
+.login:hover{
+    cursor: pointer;
+    background-color: #b5e0ff;
+}
+.register{
+    background-color: #0a95ff;
+    color: #fff;
+    
+}
+.register:hover{
+    cursor: pointer;
+    background-color: #0089f1;
+}
