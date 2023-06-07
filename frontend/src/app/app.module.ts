@@ -3,18 +3,25 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from "./header/header.component";
+import { FormatDatePipe } from './pipes/format-date.pipe';
+import { FilterPipe } from './pipes/filter.pipe';
+import { SortPipe } from './pipes/sort.pipe';
+import { TruncatePipe } from './pipes/truncate.pipe';
+
 
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
+        FormatDatePipe,
+        FilterPipe,
+        SortPipe,
+        TruncatePipe
     ],
     providers: [],
     bootstrap: [AppComponent],
     imports: [
         BrowserModule,
-        AppRoutingModule,
-        HeaderComponent
+        AppRoutingModule
     ]
 })
 export class AppModule { }
