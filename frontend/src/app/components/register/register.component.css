@@ -1,0 +1,93 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container{
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    height: 80vh;
+    width: 65%;
+}
+
+form,label,input{
+    background-color: #fff;
+}
+
+.welcome{
+    height: 100%;
+    width: 29rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
+}
+.welcome h1{
+    margin-bottom: 1rem;
+}
+.welcome p{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+
+}
+
+.register-page{
+    height: 100%;
+    width: 29rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 22rem;
+    border: none;
+    border-radius: .3rem;
+    padding: 1rem;
+}
+
+input{
+    width: 19rem;
+    height: 2.1rem;
+    border: 1px solid #babfc4;
+    border-radius: .3rem;
+    margin-bottom: .5rem;
+}
+
+label{
+    margin-top: .5rem;
+    text-transform: capitalize;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+a{
+    color: #0a95ff;
+    font-size: 1.2rem;
+}
+
+button{
+    margin-top: .5rem;
+    width: 19rem;
+    height: 2.1rem;
+    border: none;
+    border-radius: .3rem;
+    color: #fff;
+    background-color: #0a95ff;
+    text-transform: capitalize;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+p{
+    font-size: 1.2rem;
+}

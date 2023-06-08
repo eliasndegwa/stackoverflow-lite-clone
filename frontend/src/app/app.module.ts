@@ -10,6 +10,7 @@ import { TruncatePipe } from './pipes/truncate.pipe';
 import { HeaderComponent } from "./components/header/header.component";
 import { LandingComponent } from "./components/landing/landing.component";
 import { LoginComponent } from "./components/login/login.component";
+import { RegisterComponent } from "./components/register/register.component";
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { LoginComponent } from "./components/login/login.component";
         AppRoutingModule,
         HeaderComponent,
         LandingComponent,
-        LoginComponent
+        LoginComponent,
+        RegisterComponent
     ]
 })
 export class AppModule { }
