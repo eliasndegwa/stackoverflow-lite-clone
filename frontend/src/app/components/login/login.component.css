@@ -19,25 +19,25 @@ body{
 }
 .login-page{
     margin-top: 0;
-    width: 416px;
-    height: 334.2px;
+    width: 26rem;
+    height: 21rem;
     display: flex;
     align-items: center;
     justify-content: center;
     border: none;
-    border-radius: 5px;
+    border-radius: .3rem;
 }
 form{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 350px;
+    width: 22rem;
 }
 input{
-    width: 350px;
-    height: 33px;
+    width: 22rem;
+    height: 2.1rem;
     border: 1px solid #babfc4;
-    border-radius: 4px;
+    border-radius: .25rem;
     margin-top: 0;
 }
 label{
@@ -61,10 +61,10 @@ a{
 }
 button{
     margin-top: .5rem;
-    width: 350px;
-    height: 38px;
+    width: 22rem;
+    height: 2.4rem;
     border: none;
-    border-radius: 4px;
+    border-radius: .25rem;
     color: #fff;
     background-color: #0a95ff;
     text-transform: capitalize;

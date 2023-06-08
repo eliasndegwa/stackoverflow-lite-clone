@@ -11,6 +11,7 @@ import { HeaderComponent } from "./components/header/header.component";
 import { LandingComponent } from "./components/landing/landing.component";
 import { LoginComponent } from "./components/login/login.component";
 import { RegisterComponent } from "./components/register/register.component";
+import { HomeComponent } from "./components/home/home.component";
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { RegisterComponent } from "./components/register/register.component";
         HeaderComponent,
         LandingComponent,
         LoginComponent,
-        RegisterComponent
+        RegisterComponent,
+        HomeComponent
     ]
 })
 export class AppModule { }
