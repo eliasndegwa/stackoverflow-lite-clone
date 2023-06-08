@@ -9,6 +9,7 @@ import { SortPipe } from './pipes/sort.pipe';
 import { TruncatePipe } from './pipes/truncate.pipe';
 import { HeaderComponent } from "./components/header/header.component";
 import { LandingComponent } from "./components/landing/landing.component";
+import { LoginComponent } from "./components/login/login.component";
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { LandingComponent } from "./components/landing/landing.component";
         BrowserModule,
         AppRoutingModule,
         HeaderComponent,
-        LandingComponent
+        LandingComponent,
+        LoginComponent
     ]
 })
 export class AppModule { }
