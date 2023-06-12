@@ -3,6 +3,7 @@
         <div class="allQuestions">
             <div class="header">
                 <h1>All Questions</h1>
+                <app-search></app-search>
                 <button>Ask Question</button>
             </div>
             <div class="filter">
@@ -11,24 +12,24 @@
             </div>
         </div>
 
-        <div class="all-content">
+        <div class="all-content" *ngFor="let question of questions">
             <div class="votes">
                 <p>0 votes</p>
                 <p>0 answers</p>
             </div>
-            <div class="question-content">
-                <div class="content">
-                    <a href="">
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam, id?</p>
-                    </a>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis, enim! Iure voluptas hic error debitis minima, assumenda tenetur vero sequi facilis ipsum accusamus tempore animi.</p>
-                </div>
-                <div class="w">
-                    <div class="tag">
-                        <a href="">javascript</a>
+            <div class="question-content" >
+                    <div class="content">
+                        <a routerLink="/question/{{question.id}}">
+                            <p>{{question.heading}}</p>
+                        </a>
+                        <p>{{question.description}}</p>
                     </div>
-                    <p><a href="">John Doe</a> asked 1 day ago</p>
-                </div>
+                    <div class="w">
+                        <div class="tag">
+                            <a href="">{{question.tags}}</a>
+                        </div>
+                        <p><a href="">John Doe</a> asked 1 day ago</p>
+                    </div>
             </div>
         </div>
     </div>

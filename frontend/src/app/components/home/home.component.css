@@ -1,11 +1,9 @@
 *{
     background-color: #fff;
 }
-body{
-    height: 100vh;
-}
+
 .container{
-    padding-top: 2rem;
+    padding-top: 7rem;
     margin: 0 10rem;
     border-left: 1.5px solid #aab6c2;
 }
@@ -80,6 +78,7 @@ body{
     border-radius: .4rem;
     font-weight: 600;
     color: #39739d;
+    text-transform: capitalize;
 }
 
 .w{

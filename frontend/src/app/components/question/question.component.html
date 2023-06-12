@@ -1,1 +1,46 @@
-<p>question works!</p>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>{{question.heading}}</h1>
+            <br>
+        </div>
+        <div class="details">
+            <div class="votes">
+                <img src="../../../assets/upbutton.svg" alt="">
+                <p class="count">0</p>
+                <img src="../../../assets/downbutton.svg" alt="">
+            </div>
+            <div class="question-details">
+                <div class="content">
+                    <h3>{{question.heading}}</h3>
+                <p>{{question.description}}</p>
+                </div>
+                <div class="profile">
+                    <a href="" class="tag">{{question.tags}}</a>
+                    <p>asked 9 minutes ago by <a href="">John Doe</a></p>
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="answers">
+            <p>1 answer</p>
+            <div class="answer">
+                <div class="votes">
+                    <img src="../../../assets/upbutton.svg" alt="">
+                    0
+                    <img src="../../../assets/downbutton.svg" alt="">
+                </div>
+                <div class="content">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae commodi obcaecati perspiciatis voluptas consequuntur, corporis totam! Expedita obcaecati consequatur corporis.</p>
+                </div>
+            </div>
+        </div>
+        <div class="ur-answer">
+            <label for="answer">your answer</label>
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+            <button>Post your answer</button>
+        </div>
+    </div>
+      
+</body>
