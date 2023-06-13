@@ -1,4 +1,4 @@
-import { Tag } from "./app/models/Tag";
+import { Tag } from "./app/models/tag";
 import { Question } from "./app/models/question";
 
 export const sampleQuestions:Question[]=[

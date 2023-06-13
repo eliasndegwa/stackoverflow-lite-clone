@@ -6,16 +6,16 @@
             <p><img src="../../../assets/votes.svg" alt=""> Unlock new privileges like voting and commenting</p>
         </div>
         <div class="register-page">
-            <form action="">
+            <form action="" [formGroup]="registerForm" (ngSubmit)="doRegister()">
                 <label for="Display Name">Display Name</label>
-                <input type="text" name="" id="">
+                <input type="text" formControlName="name">
                 <label for="email">Email</label>
-                <input type="text" name="" id="">
+                <input type="text" formControlName="email">
                 <label for="password">Password</label>
-                <input type="text" name="" id="">
+                <input type="password" formControlName="password">
                 <button>Register</button>
             </form>
-            <p class="login">Already have an account? <a href="">Log in</a></p>
+            <p class="login">Already have an account? <a routerLink="/login">Log in</a></p>
         </div>
     </div>
 </body>

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Question } from 'src/app/models/question';
 import { ActivatedRoute } from '@angular/router';
-import { QuestionService } from 'src/app/services/question.service';
+import { QuestionService } from 'src/app/services/questionService/question.service';
 
 @Component({
   selector: 'app-question',

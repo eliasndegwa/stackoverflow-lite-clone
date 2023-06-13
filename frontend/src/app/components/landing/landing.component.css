@@ -6,7 +6,7 @@ body{
 }
 
 .container{
-    margin-top: 6rem;
+    margin-top: 2rem;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -50,11 +50,10 @@ h1{
     background-color: #FF9946;   
 }
 
-button{
+a{
     background-color: #FE6502;
     color: #fff;
-    width: 19rem;
-    height: 3rem;
+    padding: 1rem;
     border-radius: 20px;
     border: none;
     text-transform: capitalize;

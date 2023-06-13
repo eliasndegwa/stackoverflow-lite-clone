@@ -5,7 +5,7 @@ body{
 }
 
 .container{
-    margin-top: 6rem;
+    margin-top: 4rem;
     display: flex;
     align-items: center;
     justify-content:space-around;
@@ -61,6 +61,8 @@ input{
     border: 1px solid #babfc4;
     border-radius: .3rem;
     margin-bottom: .5rem;
+    padding: .5rem;
+    font-size: 1.2rem;
 }
 
 label{

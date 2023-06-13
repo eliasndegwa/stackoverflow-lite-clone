@@ -1,76 +1,68 @@
 header{
-display: flex;
-align-items: flex-end;
-justify-content: space-around;
-border-top: 3px solid #F48024;
-border-bottom: 1px solid #aab6c2;
-background-color: #fff;
-padding: .5rem 1rem;
-width: 100vw;
-}
-
-ul,li,a,img,input,.profile{
-    background-color: #fff;
-}
-
-.logo{
-    position: relative;
-    margin-left: -4rem;
-}
-
-ul{
-
     display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 2rem;
-    
-}
-ul li{
-    list-style-type: none;
-    font-size: 1.1rem;
-
-}
-
-.profile{
-    position: relative;
-    margin-right: 3rem;
-    display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: space-around;
-    gap: .5rem;
-}
-
-button{
-    width: 4.4rem;
-    height: 2rem;
-    border-radius: 3px;
-    border: 1px solid #7aa7c7;
-    text-transform: capitalize;
-}
-
-.login,.login a{
-    background-color: #E1ECF4;
-    color: #39739d;
-}
-.login:hover{
-    cursor: pointer;
-    background-color: #b5e0ff;
-}
-.login a:hover{
-    cursor: pointer;
-    background-color: #b5e0ff;
-}
-.register,.register a{
-    background-color: #0a95ff;
-    color: #fff;
+    border-top: 3px solid #F48024;
+    border-bottom: 1px solid #aab6c2;
+    background-color: #fff;
+    padding: .5rem 1rem;
+    width: 100vw;
+    }
     
-}
-.register:hover{
-    cursor: pointer;
-    background-color: #0089f1;
-}
-.register a:hover{
-    cursor: pointer;
-    background-color: #0089f1;
-}
+    ul,li,a,img,input,.profile{
+        background-color: #fff;
+    }
+    
+    .logo{
+        position: relative;
+        margin-left: -4rem;
+    }
+    
+    ul{
+    
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 2rem;
+        
+    }
+    ul li{
+        list-style-type: none;
+        font-size: 1.1rem;
+    
+    }
+    
+    .profile{
+        position: relative;
+        margin-right: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        gap: .5rem;
+    }
+    
+    .login,.register{
+        padding: .5rem 1rem;
+        border-radius: 3px;
+        border: 1px solid #7aa7c7;
+        text-transform: capitalize;
+    }
+    
+    .login{
+        background-color: #E1ECF4;
+        color: #39739d;
+    }
+    .login:hover{
+        cursor: pointer;
+        background-color: #b5e0ff;
+    }
+    
+    .register{
+        background-color: #0a95ff;
+        color: #fff;
+        
+    }
+    .register:hover{
+        cursor: pointer;
+        background-color: #0089f1;
+    }

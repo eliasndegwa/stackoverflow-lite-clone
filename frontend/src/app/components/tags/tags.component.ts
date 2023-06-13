@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Question } from 'src/app/models/question';
-import { QuestionService } from 'src/app/services/question.service';
-import { Tag } from 'src/app/models/Tag';
+import { QuestionService } from 'src/app/services/questionService/question.service';
+import { Tag } from 'src/app/models/tag';
 
 @Component({
   selector: 'app-tags',
