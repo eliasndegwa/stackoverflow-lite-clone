@@ -16,29 +16,33 @@ import { AuthService } from 'src/app/services/authService/auth.service';
 export class LoginComponent{
   constructor(private formBuilder:FormBuilder,private router:Router,private authService:AuthService,private toastr:ToastrService){}
 
-
   userData:any;
 
   loginForm=this.formBuilder.group({
-    name:this.formBuilder.control('',Validators.required),
+    email:this.formBuilder.control('',Validators.required),
     password:this.formBuilder.control('',Validators.required),
   })
 
   doLogin(){
     if(this.loginForm.valid){
       console.log(this.loginForm.value)
-      this.authService.getByCode(this.loginForm.value.name).subscribe(res=>{
-        this.userData=res;
-        console.log(this.userData);
-
-      //   if(this.userData.password===this.loginForm.value.password){
-      //     this.router.navigate([''])
-      //   }else{
-      //     this.toastr.error('invalid credentials')
-      //   }
-       });
+      this.router.navigate(['questions'])
     }
   }
 
-
+  openModal(){
+    const modal= document.querySelector(".modal") as HTMLElement
+    if(modal!==null){
+      modal.style.display='block'
+    }
+  }
+  closeModal(){
+    const modal= document.querySelector(".modal") as HTMLElement
+    if(modal!==null){
+      modal.style.display='none'
+    }
+  }
+  resetPassword(){
+    this.closeModal()
+  }
 }

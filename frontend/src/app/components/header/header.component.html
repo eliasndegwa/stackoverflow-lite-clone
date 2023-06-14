@@ -1,5 +1,17 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <header>
+    <div class="menu">
+        <i class="fa-solid fa-bars"></i>
+        <div class="nav">
+            <a routerLink="/questions">Questions</a>
+            <a routerLink="/tags">Tags</a>
+            <a routerLink="/users">Users</a>
+        </div>
+    </div>
     <a routerLink="/" class="logo"> <img src="../../../assets/logo.svg" alt="logo"></a>
+        <a routerLink="/" class="smalllogo"> <img src="../../../assets/small logo.svg" alt="logo"></a>
+        
+        
     <ul>
             <li>
                 <a routerLink="/questions">Questions</a>
@@ -13,7 +25,9 @@
     </ul>
 
     <div class="profile">
-        <a routerLink="/login" class="login">Log in</a>
+        <div class="links">
+            <a routerLink="/login" class="login">Log in</a>
         <a routerLink="/register" class="register">register</a>
+        </div>
     </div>
 </header>

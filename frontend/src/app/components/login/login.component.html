@@ -3,15 +3,28 @@
         <img src="../../../assets/small logo.svg" alt="logo">
         <div class="login-page">
             <form action="" [formGroup]="loginForm" (ngSubmit)="doLogin()">
-                <label for="name">Name</label>
-                <input type="text" formControlName="name">
+                <label for="email">Email</label>
+                <input type="email" formControlName="email">
                 <div class="reset-password">
                     <label for="password">Password</label>
-                    <!-- add popup for reset password -->
-                    <a class="reset">Forgot Password?</a>
+                <!-- Forgot Password Modal start -->
+                    <a class=" reset" (click)="openModal()">Reset Password</a>
+                <!-- modalcontent start -->
+                <div class="modal">
+                    <div class="modal-content">
+                        <span class="close" (click)="closeModal()">&times;</span>
+                        <h2>Enter your email:</h2>
+                        <div class="input-field">
+                            <input type="email" formControlName="email">
+                        </div>
+                        <button type="button" (click)="resetPassword()">reset</button>
+                    </div>
+                </div>
+                <!-- modalcontent end -->
+                <!-- Forgot Password Modal end -->
                 </div>
                 <input type="password" formControlName="password">
-                <button>log in</button>
+                <button type="submit">log in</button>
             </form>
         </div>
         <p>Don't have an account? <a routerLink="/register">Register</a></p>

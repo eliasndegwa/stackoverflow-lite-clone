@@ -6,16 +6,55 @@ header{
     border-bottom: 1px solid #aab6c2;
     background-color: #fff;
     padding: .5rem 1rem;
-    width: 100vw;
+    width: 100%;
     }
-    
-    ul,li,a,img,input,.profile{
+    i{
+        display: none;
+
+    }
+    .menu{
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 3rem;
+        margin-left: -5rem;
+    }
+    .nav{
+        margin-top: 7rem;
+        margin-left: -4rem;
+        position: absolute;
+        z-index: 1;
+        background-color:grey;
+        display: none;
+        height: 20vh;
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .nav a{
+        width: 50vw;
+        height: 3rem;
+        background-color: blue;
+    }
+
+    .menu:hover .nav{
+        display: flex;
+        flex-direction: column;
+        
+    }
+
+    ul,li,a,img,input,.profile,.links,.menu{
         background-color: #fff;
     }
     
     .logo{
         position: relative;
         margin-left: -4rem;
+    }
+    .smalllogo{
+        display: none;
+        margin-left: -14rem;
     }
     
     ul{
@@ -31,14 +70,18 @@ header{
         font-size: 1.1rem;
     
     }
-    
     .profile{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .links{
         position: relative;
         margin-right: 3rem;
         display: flex;
         align-items: center;
         justify-content: space-around;
-        gap: .5rem;
+        gap: 1rem;
     }
     
     .login,.register{
@@ -51,6 +94,8 @@ header{
     .login{
         background-color: #E1ECF4;
         color: #39739d;
+        text-align: center;
+        width: fit-content;
     }
     .login:hover{
         cursor: pointer;
@@ -65,4 +110,27 @@ header{
     .register:hover{
         cursor: pointer;
         background-color: #0089f1;
+    }
+
+    @media(max-width:800px){
+        header{
+            align-items: center;
+            /* padding: 0 1rem; */
+        }
+        .logo{
+            display: none;
+        }
+        .smalllogo{
+            display: block;
+        }
+         i{
+            display: block;
+        }
+        ul{
+            display: none;
+        }
+        .profile{
+            position: relative;
+            margin-right: -9rem;
+        }
     }

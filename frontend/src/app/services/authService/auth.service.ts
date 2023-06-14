@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { Iuser } from 'src/app/interfaces/user';
+
 
 @Injectable({
   providedIn: 'root'
@@ -10,12 +9,12 @@ export class AuthService {
 
   constructor(private http:HttpClient) { }
   apiUrl='http://localhost:3000/user'
-  getAll():Observable<Iuser[]>{
-    return this.http.get<Iuser[]>(this.apiUrl)
+  getAll(){
+    return this.http.get(this.apiUrl)
   }
 
-  getByCode(code:any):Observable<Iuser[]>{  
-    return this.http.get<Iuser[]>(this.apiUrl + '/' + code)
+  getByCode(code:any){  
+    return this.http.get(this.apiUrl + '/' + code)
   }
 
   registerUser(inputData:any){

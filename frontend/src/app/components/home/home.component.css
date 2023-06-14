@@ -13,6 +13,7 @@
     justify-content: space-between;
     border-bottom: 1.5px solid #aab6c2;
     padding: 0 1rem;
+    gap: .5rem;
 }
 .header,.filter{
     display: flex;
@@ -90,4 +91,30 @@
 .w p a{
     color: #0A95FF;
     font-size: 1.1rem;
+}
+
+@media(max-width:800px){
+    .container{
+        margin: 0 2rem;
+        border: none;
+    }
+}
+@media(max-width:550px){
+    .all-content{
+        flex-direction: column;
+    }
+    .votes{
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    .w{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+@media(max-width:450px){
+    .container{
+        width: 100%;
+    }
 }

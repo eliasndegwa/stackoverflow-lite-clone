@@ -10,7 +10,8 @@ const routes: Routes = [
   {path:'search/:search',loadComponent:()=>import('./components/home/home.component').then(c=>c.HomeComponent)},
   {path:'tags',loadComponent:()=>import('./components/tags/tags.component').then(c=>c.TagsComponent)},
   {path:'tag/:tag',loadComponent:()=>import('./components/home/home.component').then(c=>c.HomeComponent)},
-  {path:'users',loadComponent:()=>import('./components/users/users.component').then(c=>c.UsersComponent)}
+  {path:'users',loadComponent:()=>import('./components/users/users.component').then(c=>c.UsersComponent)},
+  {path:'ask-question',loadComponent:()=>import('./components/ask-question/ask-question.component').then(c=>c.AskQuestionComponent)}
 ];
 
 @NgModule({

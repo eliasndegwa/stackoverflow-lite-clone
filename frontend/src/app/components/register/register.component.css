@@ -19,7 +19,7 @@ form,label,input{
 
 .welcome{
     height: 100%;
-    width: 29rem;
+    width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -37,7 +37,7 @@ form,label,input{
 
 .register-page{
     height: 100%;
-    width: 29rem;
+    width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -49,14 +49,14 @@ form{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 22rem;
+    width: 75%;
     border: none;
     border-radius: .3rem;
     padding: 1rem;
 }
 
 input{
-    width: 19rem;
+    width: 98%;
     height: 2.1rem;
     border: 1px solid #babfc4;
     border-radius: .3rem;
@@ -79,7 +79,7 @@ a{
 
 button{
     margin-top: .5rem;
-    width: 19rem;
+    width: 99%;
     height: 2.1rem;
     border: none;
     border-radius: .3rem;
@@ -92,4 +92,16 @@ button{
 
 p{
     font-size: 1.2rem;
+}
+
+@media(max-width:950px){
+    .container{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .welcome,.register-page{
+        width: 100%;
+    }
 }
