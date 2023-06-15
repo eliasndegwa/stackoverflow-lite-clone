@@ -1,3 +1,3 @@
 <div class="search">
-    <input type="text" placeholder="Search..." (change)="doSearch()">
+    <input #s type="text" placeholder="Search..."  (keyup.enter)="doSearch(s.value)" [value]="search">
 </div>
