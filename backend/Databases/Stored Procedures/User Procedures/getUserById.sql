@@ -1,0 +1,7 @@
+CREATE OR ALTER PROCEDURE getUserById(
+   @userId VARCHAR (100)
+)
+AS 
+BEGIN
+SELECT * FROM users WHERE userId=@userId
+END

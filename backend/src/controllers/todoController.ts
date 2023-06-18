@@ -1,10 +1,7 @@
 import express, { Request, Response } from 'express'
+import { Todo } from '../interfaces/interfaces'
 
-interface Todo{
-    id:number
-    title:string
-    description:string
-}
+
 
 let todos:Todo[]=[]
 
