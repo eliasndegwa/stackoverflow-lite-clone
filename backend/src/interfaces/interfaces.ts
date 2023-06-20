@@ -1,11 +1,5 @@
 import { Request } from "express"
 
-export interface Todo{
-    id:number
-    title:string
-    description:string
-}
-
 export interface User{
     userId:string
     username:string
@@ -14,8 +8,14 @@ export interface User{
     password:string
 
 } 
+export interface DecodedData{
+    userId:string
+    username:string
+    email:string
+}
 
-export interface ExtendedRequest extends Request{
+export interface UserRequest extends Request{
+    data?:DecodedData
     body:{
         username:string
         email:string
@@ -24,5 +24,21 @@ export interface ExtendedRequest extends Request{
     }
     params:{
         userId:string
+    }
+}
+
+export interface Question{
+    questionId:string
+    questionHeading:string
+    questionDescription:string
+}
+
+export interface QuestionRequest extends Request{
+    body:{
+        title:string
+        body:string
+    }
+    params:{
+        questionId:string
     }
 }

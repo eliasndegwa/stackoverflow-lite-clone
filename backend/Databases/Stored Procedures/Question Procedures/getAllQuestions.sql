@@ -1,0 +1,5 @@
+CREATE OR ALTER PROCEDURE getQuestions
+AS
+BEGIN
+SELECT * FROM Questions
+END

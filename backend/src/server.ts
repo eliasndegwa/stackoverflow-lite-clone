@@ -1,12 +1,12 @@
 import express, {json } from 'express'
-import router from './routes/todoRoute'
 import userRoute from './routes/userRoute'
+import questionRoute from './routes/questionRoute'
 
 const app=express()
 
 app.use(json())
-app.use('/todo',router)
 app.use('/users',userRoute)
+app.use('/questions',questionRoute)
 
 app.listen(5000,()=>{
     console.log("server ready...");
