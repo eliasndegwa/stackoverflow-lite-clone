@@ -31,14 +31,26 @@ export interface Question{
     questionId:string
     questionHeading:string
     questionDescription:string
+    tags:[
+        {tagId:string,tagName:string}
+    ]
 }
 
 export interface QuestionRequest extends Request{
+    data?:DecodedData
     body:{
         title:string
         body:string
+        tags:[
+            {tagId:string,tagName:string}
+        ]
     }
     params:{
         questionId:string
     }
+}
+
+export interface Tag{
+    tagId:string
+    tagName:string
 }

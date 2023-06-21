@@ -2,7 +2,7 @@ import mssql from 'mssql'
 import {Request, RequestHandler, Response} from "express";
 import {sqlConfig} from "../config"
 import {v4 as uid} from "uuid"
-import { QuestionRequest, Question } from "../interfaces/interfaces";
+import { QuestionRequest, Question, Tag } from "../interfaces/interfaces";
 
 export const getAllQuestions:RequestHandler=async (req, res) => {
     try {
@@ -14,18 +14,24 @@ export const getAllQuestions:RequestHandler=async (req, res) => {
     }
 }
 
-export const createQuestion= async(req:QuestionRequest,res:Response)=>{
+export const postQuestion=async(req:QuestionRequest,res:Response)=>{
     try {
-        let questionId=uid()
-        const{title,body}=req.body
-        const pool= await mssql.connect(sqlConfig)
-        await pool.request()
-        .input('questionId',mssql.VarChar,questionId)
-        .input('title',mssql.VarChar,title)
-        .input('body',mssql.VarChar,body)
-        .execute('insertQuestion')
+        const questionId=uid()
+        const {title,body,tags}=req.body
+        const pool=mssql.connect(sqlConfig)        
+        await (await pool).request()
+        .input('questionId',questionId)
+        .input('title',title)
+        .input('body',body)
+        .input('userId',req.data?.userId[0])
+        .execute('postQuestion')
 
-        return res.status(201).json({message:'Question added successfully'})
+        const updatedTags = tags.map((tag) => {
+            tag.tagId = uid();
+            return tag
+        });
+        
+        return res.status(200).json({message:"Question added successfully!"})
     } catch (error:any) {
         return res.status(500).json(error.message)
     }

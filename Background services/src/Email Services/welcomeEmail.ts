@@ -16,7 +16,7 @@ interface User{
 
 export const sendWelcomeEmail=async ()=>{
     const pool=await mssql.connect(sqlConfig)
-    const users:User[]=(await (await pool.request()).query(`SELECT * FROM users	WHERE welcomeEmailSent=0`)).recordset
+    const users:User[]=(await (await pool.request()).query(`SELECT * FROM Users	WHERE welcomeEmailSent=0`)).recordset
 
     for(let user of users){
 
@@ -31,7 +31,7 @@ export const sendWelcomeEmail=async ()=>{
 
             try {
                 await sendMail(messageOptions)
-                await pool.request().query(`UPDATE users SET welcomeEmailSent=1 WHERE userId='${user.userId}'`)
+                await pool.request().query(`UPDATE Users SET welcomeEmailSent=1 WHERE userId='${user.userId}'`)
             } catch (error) {
                 console.log(err);                
             }     

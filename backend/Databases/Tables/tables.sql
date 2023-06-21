@@ -12,7 +12,8 @@ CREATE TABLE users
     email VARCHAR(50) UNIQUE NOT NULL,
 	role VARCHAR(10) NOT NULL DEFAULT 'user',
     password VARCHAR(200)NOT NULL,
-    createdAt DATETIME DEFAULT CURRENT_TIMESTAMP
+    createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
+    welcomeEmailSent BIT DEFAULT=0
 );
 
 CREATE TABLE Questions
@@ -24,60 +25,51 @@ CREATE TABLE Questions
     upvotes INT NOT NULL DEFAULT 0,
     downvotes INT NOT NULL DEFAULT 0,
     createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (userId) REFERENCES users(userId) ON DELETE CASCADE
+	FOREIGN KEY (userId) REFERENCES users(userId)
 );
 
 CREATE TABLE Answers
 (
     answerId VARCHAR(100) NOT NULL PRIMARY KEY,
-    userId VARCHAR(100) NOT NULL,
-    questionId VARCHAR(100),
+    userId VARCHAR(100) NOT NULL,FOREIGN KEY (userId) REFERENCES users(userId),
+    questionId VARCHAR(100) NOT NULL,FOREIGN KEY (questionId) REFERENCES Questions(questionId),
     title VARCHAR(255) NOT NULL,
     body VARCHAR(MAX) NOT NULL,
     upvotes INT NOT NULL DEFAULT 0,
     downvotes INT NOT NULL DEFAULT 0,
     createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (userId) REFERENCES users(userId),
-    FOREIGN KEY (questionId) REFERENCES Questions(questionId) ON DELETE CASCADE
 );
 
 CREATE TABLE Comments
 (
     commentId VARCHAR(100) NOT NULL PRIMARY KEY,
-    userId VARCHAR(100) NOT NULL,
-    questionId VARCHAR(100),
-    answerId VARCHAR(100),
+    userId VARCHAR(100) NOT NULL, FOREIGN KEY (userId) REFERENCES users(userId),
+    answerId VARCHAR(100) NOT NULL, FOREIGN KEY (answerId) REFERENCES Answers(answerId),
     body VARCHAR(MAX) NOT NULL,
-    createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (userId) REFERENCES users(userId),
-    FOREIGN KEY (questionId) REFERENCES Questions(questionId),
-    FOREIGN KEY (answerId) REFERENCES Answers(answerId) ON DELETE CASCADE
+    createdAt DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE Tags
 (
     tagId VARCHAR(100) NOT NULL PRIMARY KEY,
-    name VARCHAR(255) NOT NULL,
+    tagName VARCHAR(255) NOT NULL,
     body VARCHAR(MAX) NOT NULL
 );
 
 CREATE TABLE QuestionTags
 (
-    questionId VARCHAR(100),
-    tagId VARCHAR(100) NOT NULL,
+    questionId VARCHAR(100) NOT NULL, FOREIGN KEY (questionId) REFERENCES Questions(questionId),
+    tagId VARCHAR(100) NOT NULL, FOREIGN KEY (tagId) REFERENCES Tags(tagId),
     PRIMARY KEY (questionId, tagId),
-    FOREIGN KEY (questionId) REFERENCES Questions(questionId) ON DELETE CASCADE,
-    FOREIGN KEY (tagId) REFERENCES Tags(tagId) ON DELETE CASCADE
 );
 
 CREATE TABLE Votes
 (
-    voteId INT PRIMARY KEY,
-    userId VARCHAR(100) NOT NULL,
-    questionId VARCHAR(100),
-    answerId VARCHAR(100),
+    id INT PRIMARY KEY,
+    userId VARCHAR(100) NOT NULL, FOREIGN KEY (userId) REFERENCES users(userId),
+    questionId VARCHAR(100) NOT NULL, FOREIGN KEY (questionId) REFERENCES Questions(questionId),
+    answerId VARCHAR(100) NOT NULL, FOREIGN KEY (answerId) REFERENCES Answers(answerId),
+    voteType VARCHAR(255) NOT NULL,
     createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (userId) REFERENCES users(userId),
-    FOREIGN KEY (questionId) REFERENCES Questions(questionId),
-    FOREIGN KEY (answerId) REFERENCES Answers(answerId) ON DELETE CASCADE
+    updatedAt DATETIME DEFAULT CURRENT_TIMESTAMP
 );
