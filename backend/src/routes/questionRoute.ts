@@ -1,12 +1,12 @@
 import { Router } from "express";
-import { postQuestion, deleteQuestion, getAllQuestions, getQuestionById, updateQuestion } from "../controllers/questionController";
+import { postQuestion, deleteQuestion, getAllQuestions, getOneQuestion, updateQuestion } from "../controllers/questionController";
 import { verifyUser } from "../Middleware/verifyToken";
 
 const questionRoute=Router()
 
 questionRoute.get('',verifyUser,getAllQuestions)
-questionRoute.post('',verifyUser,postQuestion)
-questionRoute.get('/search/:questionId',verifyUser,getQuestionById)
+questionRoute.post('/:userId',verifyUser,postQuestion)
+questionRoute.get('/search/:questionId',verifyUser,getOneQuestion)
 questionRoute.put('/update/:questionId',verifyUser, updateQuestion)
 questionRoute.delete('/delete/:questionId',verifyUser, deleteQuestion)
 

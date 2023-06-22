@@ -19,7 +19,7 @@ export const postQuestion=async(req:Request<{userId:string}>,res:Response)=>{
         const {userId} = req.params;
         await DatabaseHelper.exec('postQuestion',{questionId,userId,title,body})
          tags.forEach(async (tag: { tagId: string; }) => {
-            await DatabaseHelper.exec('addQuestionTags',{tid:tag.tagId, questionId})
+            await DatabaseHelper.exec('addQuestionTags',{tagId:tag.tagId, questionId})
          });
         return res.status(201).json({ message: "question submitted" });
       } catch (error: any) {
@@ -27,7 +27,7 @@ export const postQuestion=async(req:Request<{userId:string}>,res:Response)=>{
       }
 }
 
-export const getQuestionById:RequestHandler<{questionId:string}>=async (req, res)=>{
+export const getOneQuestion:RequestHandler<{questionId:string}>=async (req, res)=>{
     try {
         const {questionId} = req.params
         let question: Question =  (await DatabaseHelper.exec('getOneQuestion',{questionId})).recordset[0];
@@ -51,6 +51,8 @@ export const updateQuestion=async(req:QuestionRequest,res:Response)=>{
         if(!question){
             return res.status(404).json({message:"question not found"})
         }else{
+            // console.log(question.userId, userId,question);
+            
             if (question.userId) {
                 await DatabaseHelper.exec('updateQuestion',{questionId:questionId,userId:userId,title,body})
     
