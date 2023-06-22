@@ -29,6 +29,7 @@ export interface UserRequest extends Request{
 
 export interface Question{
     questionId:string
+    userId:string
     questionHeading:string
     questionDescription:string
     tags:[

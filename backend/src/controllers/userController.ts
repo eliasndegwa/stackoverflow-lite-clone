@@ -29,7 +29,7 @@ export const createUser = async (req: UserRequest, res: Response) => {
 
 export const getAllUsers: RequestHandler = async (req, res) => {
     try {
-        let users: User[] =  (await DatabaseHelper.exec("getAllUsers")).recordset;
+        let users: User[] =  (await DatabaseHelper.exec("getusers")).recordset;
         return res.status(200).json(users);
     } catch (error: any) {
         return res.status(500).json(error.message);
@@ -70,7 +70,7 @@ export const updateUser = async (req: UserRequest, res: Response) => {
         let user: User = await (await DatabaseHelper.exec("getUserById",{userId:userId})).recordset[0];
 
         if (user) {
-            await DatabaseHelper.exec("updateUserDetails",{userId:userId,username,email});
+            await DatabaseHelper.exec("updateUser",{userId:userId,username,email});
 
             return res.status(200).json({ message: "User updated successfully" })
         } else {

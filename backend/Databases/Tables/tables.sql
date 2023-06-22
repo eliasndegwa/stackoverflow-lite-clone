@@ -5,71 +5,64 @@ DROP TABLE IF EXISTS Comments;
 DROP TABLE IF EXISTS Tags;
 DROP TABLE IF EXISTS QuestionTags;
 
-CREATE TABLE users
-(
-    userId VARCHAR (100) NOT NULL PRIMARY KEY,
-    username VARCHAR(200)NOT NULL,
-    email VARCHAR(50) UNIQUE NOT NULL,
-	role VARCHAR(10) NOT NULL DEFAULT 'user',
-    password VARCHAR(200)NOT NULL,
-    createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
-    welcomeEmailSent BIT DEFAULT=0
-);
+create table Users(
+  userId varchar(255),
+  username varchar(255),
+  email varchar(255) UNIQUE,
+  password varchar(255),
+  role varchar(255) default 'user',
+  createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
+  welcomeEmailSent BIT DEFAULT 0,
+  primary key (userId)
+ )
 
-CREATE TABLE Questions
-(
-    questionId VARCHAR(100) NOT NULL PRIMARY KEY,
-    userId VARCHAR(100) NOT NULL,
-    title VARCHAR(255) NOT NULL,
-    body VARCHAR(MAX) NOT NULL,
-    upvotes INT NOT NULL DEFAULT 0,
-    downvotes INT NOT NULL DEFAULT 0,
-    createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
-	FOREIGN KEY (userId) REFERENCES users(userId)
-);
+create table Questions(
+  questionId varchar(255),
+	userId varchar(255),
+	title varchar(255),
+	body varchar(1024),
+	createdAt DATETIME DEFAULT CURRENT_TIMESTAMP
+	isPreffered Bit default 0,
+	primary key (questionId)
+)
+ go
 
-CREATE TABLE Answers
-(
-    answerId VARCHAR(100) NOT NULL PRIMARY KEY,
-    userId VARCHAR(100) NOT NULL,FOREIGN KEY (userId) REFERENCES users(userId),
-    questionId VARCHAR(100) NOT NULL,FOREIGN KEY (questionId) REFERENCES Questions(questionId),
-    title VARCHAR(255) NOT NULL,
-    body VARCHAR(MAX) NOT NULL,
-    upvotes INT NOT NULL DEFAULT 0,
-    downvotes INT NOT NULL DEFAULT 0,
-    createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
-);
+ create table Answers(
+  answerId varchar(255),
+  questionId varchar(255)  FOREIGN KEY REFERENCES Questions(questionId),
+  userId varchar(255) FOREIGN KEY REFERENCES Users(userId),
+  answer text,
+  primary key (answerId)
+ )
 
-CREATE TABLE Comments
-(
-    commentId VARCHAR(100) NOT NULL PRIMARY KEY,
-    userId VARCHAR(100) NOT NULL, FOREIGN KEY (userId) REFERENCES users(userId),
-    answerId VARCHAR(100) NOT NULL, FOREIGN KEY (answerId) REFERENCES Answers(answerId),
-    body VARCHAR(MAX) NOT NULL,
-    createdAt DATETIME DEFAULT CURRENT_TIMESTAMP
-);
+ go
 
-CREATE TABLE Tags
-(
-    tagId VARCHAR(100) NOT NULL PRIMARY KEY,
-    tagName VARCHAR(255) NOT NULL,
-    body VARCHAR(MAX) NOT NULL
-);
+ create table Tags(
+  tagId varchar(255),
+  tagname varchar(255),
+  description varchar(255),
+  isDeleted bit default 0,
+   primary key (tagId)
+ )
 
-CREATE TABLE QuestionTags
-(
-    questionId VARCHAR(100) NOT NULL, FOREIGN KEY (questionId) REFERENCES Questions(questionId),
-    tagId VARCHAR(100) NOT NULL, FOREIGN KEY (tagId) REFERENCES Tags(tagId),
-    PRIMARY KEY (questionId, tagId),
-);
-
-CREATE TABLE Votes
-(
-    id INT PRIMARY KEY,
-    userId VARCHAR(100) NOT NULL, FOREIGN KEY (userId) REFERENCES users(userId),
-    questionId VARCHAR(100) NOT NULL, FOREIGN KEY (questionId) REFERENCES Questions(questionId),
-    answerId VARCHAR(100) NOT NULL, FOREIGN KEY (answerId) REFERENCES Answers(answerId),
-    voteType VARCHAR(255) NOT NULL,
-    createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
-    updatedAt DATETIME DEFAULT CURRENT_TIMESTAMP
-);
+ go 
+ create table TagsJoinQuestion(
+ tagId varchar(255) FOREIGN KEY REFERENCES Tags(tagId),
+ questionId varchar(255) FOREIGN KEY REFERENCES Questions(questionId)
+ )
+ go
+create table Comments(
+  commentId varchar(255),
+  answerId varchar(255)  FOREIGN KEY REFERENCES Answers(answerId),
+  userId varchar(255) FOREIGN KEY REFERENCES Users(userId),
+  comment varchar(255),
+  primary key (commentId)
+)
+go
+create table Votes(
+  voterId varchar(255),
+  answerId varchar(255)  FOREIGN KEY REFERENCES Answers(answerId),
+  userId varchar(255) FOREIGN KEY REFERENCES Users(userId),
+  type bit,
+  primary key (voterId)
+)
